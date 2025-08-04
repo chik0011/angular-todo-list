@@ -1,0 +1,9 @@
+<div class="todo">
+    @if (todo().donne == TodoStatus.DONE) {
+        <input id="item1" type="checkbox" checked>
+    } @else {
+        <input id="item1" type="checkbox">
+    }
+    
+    <span>{{ todo().label }}</span>
+</div>

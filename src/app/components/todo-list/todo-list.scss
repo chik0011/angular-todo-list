@@ -1,0 +1,13 @@
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 50vw;
+  gap: 3rem;
+  font-size: 1rem;
+  text-align: left;
+
+  input:checked{
+    display: block;
+  }
+}
