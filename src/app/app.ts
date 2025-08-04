@@ -18,4 +18,8 @@ export class App {
   constructor() { 
     this.todoList = this.todoService.todoList;
   }
+
+  updateTodo(todo: Todo) {
+    console.log(todo);
+  }
 }

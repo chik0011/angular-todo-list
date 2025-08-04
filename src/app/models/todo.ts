@@ -1,7 +1,7 @@
 export class Todo {
     id: number = -1;
     label: string = "";
-    donne: TodoStatus = 0;
+    status: TodoStatus = 0;
 }
 
 export enum TodoStatus {

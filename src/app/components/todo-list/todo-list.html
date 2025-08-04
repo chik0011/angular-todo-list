@@ -1,9 +1,11 @@
 <div class="todo">
-    @if (todo().donne == TodoStatus.DONE) {
-        <input id="item1" type="checkbox" checked>
+    @if (todo().status == TodoStatus.DONE || todo().status == TodoStatus.PROCESS) {
+        <input (click)="todoClick(todo())" id="item1" type="checkbox" checked>
     } @else {
-        <input id="item1" type="checkbox">
+        <input (click)="todoClick(todo())" id="item1" type="checkbox">
     }
     
-    <span>{{ todo().label }}</span>
+    <span [ngClass]="{ 'todo-done': todo().status === TodoStatus.DONE }">
+        {{ todo().label }}
+    </span>
 </div>
