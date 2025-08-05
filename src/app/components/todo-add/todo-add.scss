@@ -21,14 +21,18 @@
     }
 
     button {
-	border: none;
-	margin: 5px;
-	padding: 5px;
-	border-radius: 40px;
-	background-color: rgb(205, 205, 255);
-	width: 30px;
-	cursor: pointer;
-}
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 40px;
+        background-color: rgb(205, 205, 255);
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
 
     button img {
         max-width: 18px;

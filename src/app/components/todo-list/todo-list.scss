@@ -1,7 +1,9 @@
 .todo {
+  --color: #888;
+
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: space-between;
   min-width: 50vw;
   gap: 3rem;
   font-size: 1rem;
@@ -11,9 +13,34 @@
     display: block;
   }
 
+  button img {
+    max-width: 18px;
+    max-height: 18px;
+  }
+
+  button {
+    border: none;
+    margin: 5px;
+    padding: 5px;
+    width: 30px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
   .todo-done {
     text-decoration: line-through;
-    color: #888;
+    color: var(--color);
     opacity: 0.6;
   }
+
+  #content-left {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.todo:hover {
+    background-color: #F9F9F9;
 }

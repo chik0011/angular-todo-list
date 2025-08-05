@@ -32,4 +32,27 @@ export class TodoService {
     todo4.status = TodoStatus.PROCESS;
     this.todoList.push(todo4);
   }
+
+  add(label: string): void {
+    let nextTodoId = this.todoList.length > 0
+      ? this.todoList.reduce((prev, current) => (current.id > prev.id ? current : prev)).id + 1
+      : 1;
+
+    const todo = new Todo();
+    todo.id = nextTodoId;
+    todo.label = label;
+    todo.status = TodoStatus.DRAFT;
+
+    this.todoList.push(todo);
+  }
+
+  delete(idTodo: number) {
+    const index = this.todoList.findIndex(({ id }) => id == idTodo);
+    
+    if (index !== -1) {
+      this.todoList.splice(index, 1);
+    } else {
+      console.warn(`Todo with ID ${idTodo} not found.`);
+    }
+  }
 }

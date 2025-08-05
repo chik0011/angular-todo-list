@@ -1,7 +1,8 @@
-import { Component, input, InputSignal, OnChanges, output, SimpleChanges } from '@angular/core';
+import { Component, inject, input, InputSignal, OnChanges, output, SimpleChanges } from '@angular/core';
 import { Todo, TodoStatus } from "../../models/todo";
 import { FormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
+import { TodoService } from '../../services/todo';
 
 @Component({
   selector: 'app-todo-list',
@@ -15,6 +16,8 @@ export class TodoList {
   TodoStatus = TodoStatus;
   todoButtonClick = output<Todo>();
 
+  todoService = inject(TodoService);
+
   todoClick(todo: Todo): void {
     this.todo().status ++;
 
@@ -23,5 +26,11 @@ export class TodoList {
     }
     
     this.todoButtonClick.emit(todo);
+  }
+
+  deleteTodo() {
+    if (this.todo().id) {
+      this.todoService.delete(this.todo().id);
+    }
   }
 }
