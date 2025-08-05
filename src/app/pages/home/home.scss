@@ -1,0 +1,17 @@
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: white;
+    padding: 2rem 5rem;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+    min-width: 50vw;
+}

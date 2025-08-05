@@ -1,25 +1,10 @@
-import { Component, inject } from '@angular/core';
-import { TodoList } from "./components/todo-list/todo-list";
-import { TodoAdd } from "./components/todo-add/todo-add";
-import { Todo, TodoStatus } from './models/todo';
-import { TodoService } from './services/todo';
-
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
-  imports: [TodoList, TodoAdd],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
-
-  todoList: Todo[] = [];
-  todoService = inject(TodoService)
-
-  constructor() { 
-    this.todoList = this.todoService.todoList;
-  }
-
-  updateTodo(todo: Todo) {
-    console.log(todo);
-  }
-}
+export class App {}
